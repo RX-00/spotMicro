@@ -820,6 +820,7 @@ void servos_absolute (const i2cpwm_board::ServoArray::ConstPtr& msg)
             ROS_ERROR("Invalid PWM value %d :: PWM values must be between 0 and 4096", value);
             continue;
         }
+	std::cout << "GOT SERVO NUM: " << servo << std::endl;
         _set_pwm_interval (servo, 0, value);
         ROS_DEBUG("servo[%d] = %d", servo, value);
     }
@@ -885,7 +886,8 @@ void servos_proportional (const i2cpwm_board::ServoArray::ConstPtr& msg)
     for(std::vector<i2cpwm_board::Servo>::const_iterator sp = msg->servos.begin(); sp != msg->servos.end(); ++sp) {
         int servo = sp->servo;
         float value = sp->value;
-		_set_pwm_interval_proportional (servo, value);
+	//std::cout << "GOT SERVO NUM: " << servo << std::endl;
+	_set_pwm_interval_proportional (servo, value);
     }
 }
 
