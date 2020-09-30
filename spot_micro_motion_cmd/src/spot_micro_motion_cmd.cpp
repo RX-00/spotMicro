@@ -263,6 +263,7 @@ bool SpotMicroMotionCmd::publishServoConfiguration() {
     temp_servo_config_array.request.servos.push_back(temp_servo_config);
   }
 
+  ros::service::waitForService("config_servos");
   // call the client service, return true if succesfull, false if not
   if (!servos_config_client_.call(temp_servo_config_array)) {
     if (!smnc_.debug_mode) {
