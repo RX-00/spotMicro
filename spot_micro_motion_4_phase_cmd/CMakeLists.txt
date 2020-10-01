@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(spot_micro_motion_8_phase_cmd)
+project(spot_micro_motion_4_phase_cmd)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++14)
@@ -106,7 +106,7 @@ add_subdirectory(libs/spot_micro_kinematics_cpp)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include/spot_micro_motion_cmd
-#  LIBRARIES spot_micro_motion_8_phase_cmd
+#  LIBRARIES spot_micro_motion_4_phase_cmd
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs
 #  DEPENDS system_lib
 )
@@ -134,8 +134,9 @@ add_library(smfsm
 			src/smfsm/spot_micro_walk.cpp
 )
 
-target_link_libraries(smfsm
-		spot_micro_kinematics
+target_link_libraries(
+  smfsm
+  spot_micro_kinematics
 )
 
 ## Add cmake target dependencies of the library
@@ -146,7 +147,7 @@ target_link_libraries(smfsm
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/spot_micro_motion_8_phase_cmd.cpp src/spot_micro_motion_8_phase_cmd_node.cpp)
+add_executable(${PROJECT_NAME}_node src/spot_micro_motion_4_phase_cmd.cpp src/spot_micro_motion_4_phase_cmd_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -212,7 +213,7 @@ add_executable(${PROJECT_NAME}_node src/spot_micro_motion_8_phase_cmd.cpp src/sp
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_spot_micro_motion_8_phase_cmd.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_spot_micro_motion_4_phase_cmd.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
