@@ -106,7 +106,7 @@ add_subdirectory(libs/spot_micro_kinematics_cpp)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include/spot_micro_motion_cmd
-#  LIBRARIES spot_micro_motion_8_phase_cmd
+  LIBRARIES spot_micro_motion_8_phase_cmd
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs
 #  DEPENDS system_lib
 )
