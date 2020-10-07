@@ -1,5 +1,7 @@
 # yaml file to store the configurations
 
+# NOTE: this is the original config from the spotmini, but with updated
+# servo parameters for the MOCO
 
 # Robot structure parameters
 hip_link_length: 0.055
