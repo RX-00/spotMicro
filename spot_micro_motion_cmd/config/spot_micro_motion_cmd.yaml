@@ -9,7 +9,7 @@ hip_link_length: 0.045           # 45 mm   (JOINT TO JOINT)
 upper_leg_link_length: 0.0861    # 86.1 mm (JOINT TO JOINT)
 lower_leg_link_length: 0.0951    # 95.1 mm (JOINT TO JOINT)
 body_width: 0.065                # 8.5 cm  (JOINT TO JOINT: 6.5 cm)
-body_length: 0.075               # 11 cm   (JOINT TO JOINT: 7.5 cm)
+body_length: 0.160               # 160 mm  (JOINT TO JOINT)
 
 # Stance parameters
 default_stand_height: 0.155
